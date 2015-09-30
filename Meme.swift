@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 
-// chose to use class instead of struct as i will be updating the object by reference
-class Meme: NSObject, NSCoding {
+
+struct Meme {
+
     
     var topText : String!
     var bottomText: String!
@@ -24,19 +25,4 @@ class Meme: NSObject, NSCoding {
         self.memedImage = memedImage
     }
     
-    //MARK: NSCoding
-    
-    required init?(coder aDecoder: NSCoder) {
-        topText = aDecoder.decodeObjectForKey("topText") as! String
-        bottomText = aDecoder.decodeObjectForKey("bottomText") as! String
-        image = aDecoder.decodeObjectForKey("image") as! UIImage
-        memedImage = aDecoder.decodeObjectForKey("memedImage") as! UIImage
-    }
-    
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(topText, forKey: "topText")
-        aCoder.encodeObject(bottomText, forKey: "bottomText")
-        aCoder.encodeObject(image, forKey: "image")
-        aCoder.encodeObject(memedImage, forKey: "memedImage")
-    }
 }

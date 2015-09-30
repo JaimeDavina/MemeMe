@@ -98,7 +98,7 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
         let activityVC = UIActivityViewController(activityItems:[memedImage],applicationActivities:nil)
         presentViewController(activityVC, animated: true, completion: nil)
         activityVC.completionWithItemsHandler = {
-            (s: String?, ok: Bool, items: [AnyObject]?, err:NSError?) -> Void in
+            (s: String?, Bool, item: [AnyObject]?, err: NSError?) -> Void in
             self.save()
             activityVC.dismissViewControllerAnimated(true, completion: nil)
             self.dismissViewControllerAnimated(true, completion: nil)
@@ -128,7 +128,7 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
     
     func keyboardWillShow(notification: NSNotification) {
         if bottomTextInput.isFirstResponder() {
-            view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
     
@@ -147,8 +147,8 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
         topToolbar.hidden = true
         bottomToolbar.hidden = true
         
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        view.drawViewHierarchyInRect(self.view.frame,afterScreenUpdates: true)
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawViewHierarchyInRect(view.frame,afterScreenUpdates: true)
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
@@ -160,10 +160,10 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
     func save() {
         
         if let existingMeme = meme {
-            existingMeme.topText = topTextInput.text
-            existingMeme.bottomText = bottomTextInput.text
-            existingMeme.image = memeImageView.image!
-            existingMeme.memedImage = memedImage
+            topTextInput.text = existingMeme.topText
+            bottomTextInput.text = existingMeme.bottomText
+            memeImageView.image = existingMeme.image
+            memedImage = existingMeme.memedImage
         } else{
             let newMeme = Meme(topText: topTextInput.text!, bottomText: bottomTextInput.text!, image: memeImageView.image!, memedImage: memedImage)
             MemeRepository.sharedInstance.memes.append(newMeme)

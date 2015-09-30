@@ -29,7 +29,7 @@ class MemeRepository {
         let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         let docsDir = dirPaths[0]
         let dataFilePath = (docsDir as NSString).stringByAppendingPathComponent("memes")
-        NSKeyedArchiver.archiveRootObject(memes, toFile: dataFilePath)
+        NSKeyedArchiver.archiveRootObject("memes", toFile: dataFilePath)
     }
     
 }
