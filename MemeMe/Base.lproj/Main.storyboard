@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GeI-kG-gvV">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Meme Editor View Controller-->
+        <scene sceneID="Wlu-f3-Yf5">
+            <objects>
+                <viewController id="GeI-kG-gvV" customClass="MemeEditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z4V-Yr-9og"/>
+                        <viewControllerLayoutGuide type="bottom" id="3SQ-h1-8ZT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Ct-7R-Z8z">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F9K-Ia-KVE">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                                <animations/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="wVa-u4-FDG">
+                                <rect key="frame" x="296" y="92" width="9" height="18"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="WEB-yK-56t">
+                                <rect key="frame" x="296" y="514" width="9" height="17"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oB2-J6-E4O">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="LXC-pF-rNG"/>
+                                    <barButtonItem systemItem="camera" id="y6Q-kw-rlj">
+                                        <connections>
+                                            <action selector="launchCamera:" destination="GeI-kG-gvV" id="N1V-NY-FfN"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="XpC-lg-BJt"/>
+                                    <barButtonItem title="Album" id="Rc9-QA-mtE">
+                                        <connections>
+                                            <action selector="launchAlbumPIcker:" destination="GeI-kG-gvV" id="L2z-80-pyg"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="XBm-cL-Chi"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GWV-Md-SGt">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <barButtonItem systemItem="action" id="U7A-A3-1gH">
+                                        <connections>
+                                            <action selector="shareMeme:" destination="GeI-kG-gvV" id="Hoc-yN-PIj"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hXw-3o-Ifz"/>
+                                    <barButtonItem title="Cancel" id="4HF-z1-c0F">
+                                        <connections>
+                                            <action selector="resetMeme:" destination="GeI-kG-gvV" id="bcC-Be-mv1"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wVa-u4-FDG" firstAttribute="trailing" secondItem="WEB-yK-56t" secondAttribute="trailing" id="2bN-9W-4F1"/>
+                            <constraint firstItem="oB2-J6-E4O" firstAttribute="top" secondItem="WEB-yK-56t" secondAttribute="bottom" constant="25" id="3D7-u6-O3r"/>
+                            <constraint firstItem="wVa-u4-FDG" firstAttribute="leading" secondItem="F9K-Ia-KVE" secondAttribute="trailing" constant="-580" id="68S-Hk-bac"/>
+                            <constraint firstItem="wVa-u4-FDG" firstAttribute="centerX" secondItem="GWV-Md-SGt" secondAttribute="centerX" id="9in-4l-4hX"/>
+                            <constraint firstItem="F9K-Ia-KVE" firstAttribute="leading" secondItem="3Ct-7R-Z8z" secondAttribute="leadingMargin" constant="-20" id="FGQ-4q-Ny0"/>
+                            <constraint firstItem="wVa-u4-FDG" firstAttribute="leading" secondItem="F9K-Ia-KVE" secondAttribute="trailing" constant="-580" id="YGs-ak-hYQ"/>
+                            <constraint firstItem="3SQ-h1-8ZT" firstAttribute="top" secondItem="oB2-J6-E4O" secondAttribute="bottom" id="ZuN-12-xLB"/>
+                            <constraint firstItem="wVa-u4-FDG" firstAttribute="leading" secondItem="WEB-yK-56t" secondAttribute="leading" id="g1e-RV-Krx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GWV-Md-SGt" secondAttribute="trailing" constant="-20" id="g3r-qb-VDj"/>
+                            <constraint firstItem="F9K-Ia-KVE" firstAttribute="top" secondItem="GWV-Md-SGt" secondAttribute="bottom" id="iJT-lL-dgh"/>
+                            <constraint firstItem="GWV-Md-SGt" firstAttribute="top" secondItem="z4V-Yr-9og" secondAttribute="bottom" id="jww-LK-5V8"/>
+                            <constraint firstItem="oB2-J6-E4O" firstAttribute="top" secondItem="F9K-Ia-KVE" secondAttribute="bottom" id="kay-uC-8go"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oB2-J6-E4O" secondAttribute="trailing" constant="-20" id="o8F-gp-1Wj"/>
+                            <constraint firstItem="wVa-u4-FDG" firstAttribute="top" secondItem="GWV-Md-SGt" secondAttribute="bottom" constant="28" id="rKi-80-3rU"/>
+                            <constraint firstItem="oB2-J6-E4O" firstAttribute="top" secondItem="F9K-Ia-KVE" secondAttribute="bottom" id="rw9-Zq-PHF"/>
+                            <constraint firstItem="F9K-Ia-KVE" firstAttribute="top" secondItem="GWV-Md-SGt" secondAttribute="bottom" id="vlQ-rd-v9K"/>
+                            <constraint firstItem="oB2-J6-E4O" firstAttribute="leading" secondItem="3Ct-7R-Z8z" secondAttribute="leadingMargin" constant="-20" id="wHB-ns-CKk"/>
+                            <constraint firstItem="GWV-Md-SGt" firstAttribute="leading" secondItem="3Ct-7R-Z8z" secondAttribute="leadingMargin" constant="-20" id="xh4-kz-ezD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="F9K-Ia-KVE" secondAttribute="trailing" constant="-20" id="yd0-Vv-Dp5"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="68S-Hk-bac"/>
+                                <exclude reference="YGs-ak-hYQ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="albumPickerButton" destination="Rc9-QA-mtE" id="1lT-b2-2K7"/>
+                        <outlet property="bottomTextInput" destination="WEB-yK-56t" id="P8k-kQ-Ixd"/>
+                        <outlet property="bottomToolbar" destination="oB2-J6-E4O" id="FyU-rL-mzt"/>
+                        <outlet property="cameraButton" destination="y6Q-kw-rlj" id="aKO-Pg-u5H"/>
+                        <outlet property="cancelButton" destination="4HF-z1-c0F" id="w45-HA-Mbq"/>
+                        <outlet property="memeImageView" destination="F9K-Ia-KVE" id="9ys-kB-VcQ"/>
+                        <outlet property="shareButton" destination="U7A-A3-1gH" id="wDO-QD-t9M"/>
+                        <outlet property="topTextInput" destination="wVa-u4-FDG" id="vdf-Ht-bhk"/>
+                        <outlet property="topToolbar" destination="GWV-Md-SGt" id="ckH-xp-wFX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="edc-qb-eyV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="387" y="-483"/>
+        </scene>
+    </scenes>
+</document>
