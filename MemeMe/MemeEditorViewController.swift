@@ -103,6 +103,7 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
             activityVC.dismissViewControllerAnimated(true, completion: nil)
             self.dismissViewControllerAnimated(true, completion: nil)
         }
+        
     }
     
     @IBAction func launchAlbumPIcker(sender: UIBarButtonItem) {
