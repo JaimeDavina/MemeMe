@@ -64,7 +64,7 @@
         <!--Meme Table View Controller-->
         <scene sceneID="Pls-PC-6Xq">
             <objects>
-                <viewController id="Fyc-Ao-mRX" customClass="MemeTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Fyc-Ao-mRX" customClass="MemeTableViewController" customModule="MemeMe" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LSK-fl-yXC"/>
                         <viewControllerLayoutGuide type="bottom" id="g2x-e9-N6M"/>
@@ -116,6 +116,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Fyc-Ao-mRX" id="wgG-el-LJB"/>
+                                    <outlet property="delegate" destination="Fyc-Ao-mRX" id="mf4-Cs-Vdl"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <animations/>

@@ -26,6 +26,7 @@ class MemeTableViewController: UITableViewController {
         
         let memeDetailVC = storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         memeDetailVC.selectedMeme = memes[indexPath.row]
+        memeDetailVC.indexOfSelectedMeme = indexPath.row
         navigationController!.pushViewController(memeDetailVC, animated: true)
     }
     
