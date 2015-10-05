@@ -6,7 +6,6 @@
 //  Copyright © 2015 Peauxit. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 
