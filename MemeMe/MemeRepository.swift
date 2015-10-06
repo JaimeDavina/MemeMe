@@ -20,7 +20,7 @@ class MemeRepository {
         let docsDir = dirPaths[0]
         let dataFilePath = (docsDir as NSString).stringByAppendingPathComponent("memes")
         if filemgr.fileExistsAtPath(dataFilePath) {
-            memes = NSKeyedUnarchiver.unarchiveObjectWithFile(dataFilePath) as! [Meme]
+           memes = NSKeyedUnarchiver.unarchiveObjectWithFile(dataFilePath) as! [Meme]!
         }
         
     }

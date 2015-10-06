@@ -8,7 +8,7 @@
         <!--Meme Collection View Controller-->
         <scene sceneID="wOe-0s-R35">
             <objects>
-                <collectionViewController id="D5M-Zv-OPI" customClass="MemeCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="MemeCollectionViewController" id="D5M-Zv-OPI" customClass="MemeCollectionViewController" customModule="MemeMe" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="bcz-4U-Bh7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,10 +41,6 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="D5M-Zv-OPI" id="jSP-5t-WIy"/>
-                            <outlet property="delegate" destination="D5M-Zv-OPI" id="u5t-xK-wXZ"/>
-                        </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="Jnt-kb-F4r">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fes-qW-yxM">
@@ -64,7 +60,7 @@
         <!--Meme Table View Controller-->
         <scene sceneID="Pls-PC-6Xq">
             <objects>
-                <viewController id="Fyc-Ao-mRX" customClass="MemeTableViewController" customModule="MemeMe" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeTableViewController" id="Fyc-Ao-mRX" customClass="MemeTableViewController" customModule="MemeMe" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LSK-fl-yXC"/>
                         <viewControllerLayoutGuide type="bottom" id="g2x-e9-N6M"/>
@@ -116,10 +112,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="Fyc-Ao-mRX" id="wgG-el-LJB"/>
-                                    <outlet property="delegate" destination="Fyc-Ao-mRX" id="mf4-Cs-Vdl"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <animations/>
@@ -132,6 +124,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="view" destination="cJv-Zo-eQ1" id="9N7-d1-mZh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QJ8-wW-v77" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -140,7 +135,7 @@
         <!--Meme Detail View Controller-->
         <scene sceneID="4q2-EF-8yk">
             <objects>
-                <viewController storyboardIdentifier="MemeDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ula-Kx-b5f" customClass="MemeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ula-Kx-b5f" customClass="MemeDetailViewController" customModule="MemeMe" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KWJ-cK-NP9"/>
                         <viewControllerLayoutGuide type="bottom" id="8ei-HF-BPS"/>
@@ -197,7 +192,7 @@
         <!--Meme Editor View Controller-->
         <scene sceneID="Wlu-f3-Yf5">
             <objects>
-                <viewController id="GeI-kG-gvV" customClass="MemeEditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeEditorViewController" id="GeI-kG-gvV" customClass="MemeEditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z4V-Yr-9og"/>
                         <viewControllerLayoutGuide type="bottom" id="3SQ-h1-8ZT"/>

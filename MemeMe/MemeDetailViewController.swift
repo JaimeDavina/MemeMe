@@ -11,12 +11,11 @@ import UIKit
 class MemeDetailViewController: UIViewController {
 
     var selectedMeme: Meme!
-    var indexOfSelectedMeme: Int?
     
     @IBOutlet weak var detailsImageView: UIImageView!
     
     @IBAction func deleteMeme(sender: UIBarButtonItem) {
-        if let foundIndex = indexOfSelectedMeme {
+        if let foundIndex = MemeRepository.sharedInstance.memes.indexOf(selectedMeme){
             //remove the item at the found index
             MemeRepository.sharedInstance.memes.removeAtIndex(foundIndex)
             navigationController?.popViewControllerAnimated(true)

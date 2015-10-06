@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Foundation
 
 
-struct Meme {
+class Meme: NSObject, NSCoding {
 
     
     var topText : String!
@@ -22,6 +23,22 @@ struct Meme {
         self.bottomText = bottomText
         self.image = image
         self.memedImage = memedImage
+    }
+    
+    //MARK: NSCoding
+    
+    @objc required init?(coder aDecoder: NSCoder) {
+        topText = aDecoder.decodeObjectForKey("topText") as! String
+        bottomText = aDecoder.decodeObjectForKey("bottomText") as! String
+        image = aDecoder.decodeObjectForKey("image") as! UIImage
+        memedImage = aDecoder.decodeObjectForKey("memedImage") as! UIImage
+    }
+    
+    @objc func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(topText, forKey: "topText")
+        aCoder.encodeObject(bottomText, forKey: "bottomText")
+        aCoder.encodeObject(image, forKey: "image")
+        aCoder.encodeObject(memedImage, forKey: "memedImage")
     }
     
 }

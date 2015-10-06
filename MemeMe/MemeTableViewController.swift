@@ -19,14 +19,13 @@ class MemeTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         MemeRepository.sharedInstance.getMemes()
         memes = MemeRepository.sharedInstance.memes
-        tableView?.reloadData()
+        self.tableView.reloadData()
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let memeDetailVC = storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         memeDetailVC.selectedMeme = memes[indexPath.row]
-        memeDetailVC.indexOfSelectedMeme = indexPath.row
         navigationController!.pushViewController(memeDetailVC, animated: true)
     }
     
