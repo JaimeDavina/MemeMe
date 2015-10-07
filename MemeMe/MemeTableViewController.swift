@@ -15,9 +15,13 @@ class MemeTableViewController: UITableViewController {
     let cellIdentifier = "MemeTableViewCell"
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        MemeRepository.sharedInstance.getMemes()
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        MemeRepository.sharedInstance.getMemes()
         memes = MemeRepository.sharedInstance.memes
         self.tableView.reloadData()
     }
