@@ -26,7 +26,6 @@ class MemeCollectionViewController: UICollectionViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        memes = MemeRepository.sharedInstance.memes
         collectionView?.reloadData()
     }
     
@@ -40,8 +39,7 @@ class MemeCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let memeDetailVC = storyboard?.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
-        memeDetailVC.selectedMeme = memes[indexPath.item]
+        let memeDetailVC = storyboard?.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeCollectionViewController
         navigationController!.pushViewController(memeDetailVC, animated: true)
     }
     

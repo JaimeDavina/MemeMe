@@ -15,21 +15,9 @@ class MemeTableViewController: UITableViewController {
     let cellIdentifier = "MemeTableViewCell"
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        MemeRepository.sharedInstance.getMemes()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        memes = MemeRepository.sharedInstance.memes
-        self.tableView.reloadData()
-    }
-    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let memeDetailVC = storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
-        memeDetailVC.selectedMeme = memes[indexPath.row]
+        let memeDetailVC = storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeTableViewController
         navigationController!.pushViewController(memeDetailVC, animated: true)
     }
     

@@ -90,7 +90,7 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
     
     
     @IBAction func resetMeme(sender: UIBarButtonItem) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func shareMeme(sender: UIBarButtonItem) {
@@ -166,9 +166,7 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
             memeImageView.image = existingMeme.image
             memedImage = existingMeme.memedImage
         } else{
-            let newMeme = Meme(topText: topTextInput.text!, bottomText: bottomTextInput.text!, image: memeImageView.image!, memedImage: memedImage)
-            MemeRepository.sharedInstance.memes.append(newMeme)
-            MemeRepository.sharedInstance.persistMemes()
+            _ = Meme(topText: topTextInput.text!, bottomText: bottomTextInput.text!, image: memeImageView.image!, memedImage: memedImage)
         }
     }
 }
