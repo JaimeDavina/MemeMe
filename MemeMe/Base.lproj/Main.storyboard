@@ -138,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QJ8-wW-v77" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="539" y="-825"/>
+            <point key="canvasLocation" x="514" y="-844"/>
         </scene>
         <!--Meme Detail View Controller-->
         <scene sceneID="4q2-EF-8yk">
