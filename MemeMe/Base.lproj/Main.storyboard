@@ -64,7 +64,7 @@
         <!--Meme Editor View Controller-->
         <scene sceneID="Wlu-f3-Yf5">
             <objects>
-                <viewController storyboardIdentifier="MemeEditorViewController" id="GeI-kG-gvV" customClass="MemeEditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeEditorViewController" id="GeI-kG-gvV" customClass="MemeEditorViewController" customModule="MemeMe" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z4V-Yr-9og"/>
                         <viewControllerLayoutGuide type="bottom" id="3SQ-h1-8ZT"/>
@@ -177,7 +177,7 @@
         <!--Sent Memes-->
         <scene sceneID="O8q-YM-lYI">
             <objects>
-                <tableViewController storyboardIdentifier="MemeTableViewController" id="seq-BO-jQt" customClass="MemeTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MemeTableViewController" id="seq-BO-jQt" customClass="MemeTableViewController" customModule="MemeMe" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lLH-1u-EQU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -196,7 +196,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LaR-6e-uYJ">
@@ -230,7 +230,7 @@
                     <navigationItem key="navigationItem" title="Sent Memes" id="FYS-An-nhW">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="rri-5Q-gvt">
                             <connections>
-                                <segue destination="GeI-kG-gvV" kind="presentation" id="UkA-mh-7bX"/>
+                                <segue destination="GeI-kG-gvV" kind="presentation" identifier="editSegue" id="UkA-mh-7bX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -303,6 +303,6 @@
         <image name="memeImage" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Y8j-3I-aF9"/>
+        <segue reference="UkA-mh-7bX"/>
     </inferredMetricsTieBreakers>
 </document>

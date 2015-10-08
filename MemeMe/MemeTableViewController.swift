@@ -3,7 +3,7 @@
 //  MemeMe
 //
 //  Created by Patrick Bellot on 10/2/15.
-//  Copyright © 2015 Irish Poet. All rights reserved.
+//  Copyright © 2015 Peauxit. All rights reserved.
 //
 
 import UIKit
@@ -15,11 +15,33 @@ class MemeTableViewController: UITableViewController {
     let cellIdentifier = "MemeTableViewCell"
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
+    override func viewWillAppear(animated: Bool) {
+       
+        memes = appDelegate.memes
+
+        if self.memes.count == 0{
+            let storyboard = self.storyboard
+            let vc = storyboard!.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
+            self.presentViewController(vc, animated: true, completion: nil)
+        } else {
+            super.viewWillAppear(true)
+            tableView.reloadData()
+        }
+    }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        let memeDetailVC = storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeTableViewController
-        navigationController!.pushViewController(memeDetailVC, animated: true)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        memes = appDelegate.memes
+        tableView.reloadData()
+    }
+    
+    //Mark: UITextFieldDelegate Methods
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return memes.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -31,9 +53,12 @@ class MemeTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return memes.count
-        
+    //Mark: UITableViewDelegate Methods
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        _ = memes[indexPath.row]
     }
     
 }
+    
+
