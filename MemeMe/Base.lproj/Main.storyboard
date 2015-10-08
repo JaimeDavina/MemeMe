@@ -262,7 +262,7 @@
         <scene sceneID="RTm-cY-w4F">
             <objects>
                 <navigationController id="8nH-rQ-56F" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="TableView" id="Fbf-gq-HwF"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="tableview" id="Fbf-gq-HwF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="90B-4V-2YK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -280,7 +280,7 @@
         <scene sceneID="JCp-jy-LQA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y70-wd-rAs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="CollectionView" id="q8l-JB-N1V"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="collectionview" id="q8l-JB-N1V"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Too-xb-Jm5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -298,9 +298,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CollectionView" width="30" height="30"/>
-        <image name="TableView" width="30" height="30"/>
+        <image name="collectionview" width="30" height="30"/>
         <image name="memeImage" width="16" height="16"/>
+        <image name="tableview" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="UkA-mh-7bX"/>
