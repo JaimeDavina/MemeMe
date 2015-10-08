@@ -15,7 +15,7 @@ class MemeTableViewController: UITableViewController {
     let cellIdentifier = "MemeTableViewCell"
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewDidAppear(animated: Bool) {
        
         memes = appDelegate.memes
 
@@ -24,7 +24,7 @@ class MemeTableViewController: UITableViewController {
             let vc = storyboard!.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
             self.presentViewController(vc, animated: true, completion: nil)
         } else {
-            super.viewWillAppear(true)
+            super.viewDidAppear(true)
             tableView.reloadData()
         }
     }
