@@ -10,7 +10,7 @@ import UIKit
 
 class MemeEditorViewController: UIViewController, UINavigationControllerDelegate {
     
-    var meme: Meme?
+    var meme: Meme!
     let memeTextAttributes = [
         NSStrokeWidthAttributeName: -3.0,
         NSForegroundColorAttributeName: UIColor.whiteColor(),
@@ -46,10 +46,8 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
     var memedImage : UIImage!
     let topTextDefaultValue = "TOP"
     let bottomTextDefaultValue = "BOTTOM"
-    
-    // Reusing the words TOP and BOTTOM
-    var topInputIsDirty = false
-    var bottomInputIsDirty = false
+    var topInputWasEdited = false
+    var bottomInputWasEdited = false
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -61,8 +59,8 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
             topTextInput.text = existingMeme.topText
             bottomTextInput.text = existingMeme.bottomText
             memeImageView.image = existingMeme.image
-            topInputIsDirty = true
-            bottomInputIsDirty = true
+            topInputWasEdited = true
+            bottomInputWasEdited = true
             shareButton.enabled = true
         }
     }
@@ -166,7 +164,7 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
             memeImageView.image = existingMeme.image
             memedImage = existingMeme.memedImage
         } else{
-            _ = Meme(topText: topTextInput.text!, bottomText: bottomTextInput.text!, image: memeImageView.image!, memedImage: memedImage)
+           _ = Meme(topText: topTextInput.text!, bottomText: bottomTextInput.text!, image: memeImageView.image!, memedImage: memedImage)
         }
     }
 }
@@ -187,14 +185,14 @@ extension MemeEditorViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(textField: UITextField) {
         if textField.text == topTextDefaultValue {
-            if !topInputIsDirty {
+            if !topInputWasEdited{
                 textField.text = ""
-                topInputIsDirty = true
+                topInputWasEdited = true
             }
         } else {
-            if !bottomInputIsDirty {
+            if !bottomInputWasEdited {
                 textField.text = ""
-                bottomInputIsDirty = true
+                bottomInputWasEdited = true
             }
         }
     }

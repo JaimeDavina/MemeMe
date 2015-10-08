@@ -15,8 +15,12 @@ class MemeTableViewController: UITableViewController {
     let cellIdentifier = "MemeTableViewCell"
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        memes = appDelegate.memes
+    }
+    
     override func viewDidAppear(animated: Bool) {
-       
         memes = appDelegate.memes
 
         if self.memes.count == 0{
@@ -29,11 +33,6 @@ class MemeTableViewController: UITableViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        memes = appDelegate.memes
-        tableView.reloadData()
-    }
     
     //Mark: UITextFieldDelegate Methods
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -44,7 +43,7 @@ class MemeTableViewController: UITableViewController {
         return memes.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let meme = memes[indexPath.row]
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! MemeTableViewCell
         cell.memeImage?.image = meme.memedImage
