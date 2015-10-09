@@ -27,7 +27,8 @@ class MemeCollectionViewController: UICollectionViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        collectionView?.reloadData()
+         memes = appDelegate.memes
+         collectionView?.reloadData()
     }
     
     // MARK: UICollectionViewDataSource
