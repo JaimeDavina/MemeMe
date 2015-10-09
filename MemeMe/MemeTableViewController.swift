@@ -55,8 +55,11 @@ class MemeTableViewController: UITableViewController {
     //Mark: UITableViewDelegate Methods
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        _ = memes[indexPath.row]
-    }
+        let detailVC = storyboard!.instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
+        detailVC.chosenMeme = memes[indexPath.row]
+        detailVC.indexOfChosenMeme = indexPath.row
+        navigationController!.pushViewController(detailVC, animated: true)
+    }    
     
 }
     
