@@ -111,8 +111,8 @@
 				BAAFBAA21BBB40520047F3E5 /* Meme.swift */,
 				BA3A49B81BBF2C9B007A4053 /* MemeTableViewController.swift */,
 				BAC7EE431BC5B92A00FB445D /* MemeTableViewCell.swift */,
-				BA3A49B61BBF2B8F007A4053 /* MemeCollectionViewCell.swift */,
 				BA3A49B21BBF27DF007A4053 /* MemeCollectionViewController.swift */,
+				BA3A49B61BBF2B8F007A4053 /* MemeCollectionViewCell.swift */,
 				BA56DDDA1BB59E780043AD32 /* MemeEditorViewController.swift */,
 				BA56DDDC1BB59E780043AD32 /* Main.storyboard */,
 				BA56DDDF1BB59E790043AD32 /* Assets.xcassets */,
@@ -416,7 +416,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				INFOPLIST_FILE = MemeMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.patrickBellot.MemeMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -427,7 +429,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				INFOPLIST_FILE = MemeMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.patrickBellot.MemeMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";

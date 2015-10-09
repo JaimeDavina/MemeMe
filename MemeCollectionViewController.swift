@@ -12,7 +12,7 @@ class MemeCollectionViewController: UICollectionViewController {
 
     @IBOutlet weak var flowLayout:UICollectionViewFlowLayout!
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    var memes: [Meme] = [Meme]()
+    var memes: [Meme]!
     let cellIdentifier = "MemeCollectionViewCell"
     
     override func viewDidLoad() {
@@ -22,6 +22,7 @@ class MemeCollectionViewController: UICollectionViewController {
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSizeMake(dimension, dimension)
+        memes = appDelegate.memes
     }
     
     override func viewWillAppear(animated: Bool) {

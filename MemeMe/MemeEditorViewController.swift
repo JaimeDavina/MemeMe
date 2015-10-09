@@ -164,8 +164,10 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
             memeImageView.image = existingMeme.image
             memedImage = existingMeme.memedImage
         } else{
-           _ = Meme(topText: topTextInput.text!, bottomText: bottomTextInput.text!, image: memeImageView.image!, memedImage: memedImage)
-        }
+           let newMeme = Meme(topText: topTextInput.text!, bottomText: bottomTextInput.text!, image: memeImageView.image!, memedImage: memedImage)
+            let object = UIApplication.sharedApplication().delegate
+            let appDelegate = object as! AppDelegate
+            appDelegate.memes.append(newMeme)        }
     }
 }
 
