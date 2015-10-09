@@ -33,7 +33,6 @@ class MemeTableViewController: UITableViewController {
         }
     }
     
-    
     //Mark: UITextFieldDelegate Methods
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
